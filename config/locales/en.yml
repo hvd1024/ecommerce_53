@@ -4,6 +4,8 @@ en:
       logo: "E-Commerce"
       home: "Home"
       product: "Product"
+      user: User
+      login: Login
     footer:
       authors: "Authors: "
       dong: "Ha Van Dong"
