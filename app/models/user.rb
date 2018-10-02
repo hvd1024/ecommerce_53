@@ -10,8 +10,10 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :address, presence: true
   validates :phone, presence: true, format: {with: VALID_PHONE_REGEX}
-  validates :password, length: {minimum: Settings.user.password._min}
+  validates :password, length: {minimum: Settings.user.password._min},
+   allow_nil: true
   enum role: {customer: 0, admin: 1}
+  scope :select_col, ->{attribute_names}
   has_secure_password
 
   class <<self
