@@ -13,14 +13,15 @@ en:
   layouts:
     header:
       logo: "E-Commerce"
-      home: "Home"
+      home: "Furniture.com"
       product: "Product"
       user: User
       login: Login
       update: "Update"
+      signup: Sign Up
     footer:
       authors: "Authors: "
-      name: "Ha Van Dong | Nguyen Viet Minh Tue"
+      name: "Hà Văn Đồng | Nguyễn Viết Minh Tuệ"
   sessions:
     new:
       signup: "Sign up now"
