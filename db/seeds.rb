@@ -56,7 +56,7 @@
 #   rand = 2+Random.rand(7)
 #   Product.create!(name: Faker::Name.unique.name,
 #     description: Faker::Lorem.sentence(4),
-#     image: "product/#{rand}.jpg",
+#     image: "product/2.jpg",
 #     category_id: rand,
 #     quantity: rand,
 #     price: rand
@@ -139,31 +139,5 @@
 #   quantity: 1,
 #   price: 1
 # )
-
-# 10.times do |i|
-#   rand = 2+Random.rand(7)
-#   Product.create!(name: Faker::Pokemon.name+"_"+i.to_s,
-#     description: "none",
-#     image: "product/2.jpg",
-#     category_id: rand,
-#     quantity: rand,
-#     price: rand
-#   )
-# end
-
-# 9.times do |n|
-#   n = n + 1
-#   p_name  = "Product #{n}"
-#   p_description = "description"
-#   p_category = "None"
-#   p_price = "#{n*1000000}"
-#   p_rate = 4.5
-
-#   Product.create!(name: p_name,
-#     description: p_description,
-#     image: "product/default-product.jpg",
-#     category: p_category,
-#     price: p_price,
-#     rate: p_rate)
-# end
 # /test sort
+

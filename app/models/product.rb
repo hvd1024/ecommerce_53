@@ -38,4 +38,5 @@ class Product < ApplicationRecord
     .where("categories.id IN (?)", children_id)
   end
   scope :sort_product_updated, ->{order("created_at desc").limit(12)}
+  scope :recently_products, -> list {where "id in (?)", list}
 end
