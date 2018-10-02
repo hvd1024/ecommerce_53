@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'static_pages/home'
+  end
   root "static_pages#home"
   get "sessions/new"
   get "/signup", to: "users#new"
@@ -11,8 +14,15 @@ Rails.application.routes.draw do
   post "/product_rating/:id", to: "products#rating", as: "rating"
   get "/suggestions", to: "suggestions#new"
   post "/suggestions", to: "suggestions#create"
+  get "/recently", to: "recent_views#recently"
 
-  resources :categories
-  resources :products
   resources :users
+  resources :products
+  resources :categories
+
+  namespace :admin do
+    root "static_pages#home"
+    resources :users
+    resources :products
+  end
 end

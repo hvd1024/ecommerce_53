@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :phone, presence: true, format: {with: VALID_PHONE_REGEX}
   validates :password, length: {minimum: Settings.user.password._min}
   enum role: {customer: 0, admin: 1}
+  scope :select_col, ->{attribute_names}
   has_secure_password
 
   class <<self
