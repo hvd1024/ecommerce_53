@@ -10,23 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_05_060958) do
+ActiveRecord::Schema.define(version: 2018_10_10_095351) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "detail_orders", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "quantity"
-    t.integer "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "order_id"
-    t.index ["product_id"], name: "index_detail_orders_on_product_id"
   end
 
   create_table "order_details", force: :cascade do |t|
@@ -39,14 +29,10 @@ ActiveRecord::Schema.define(version: 2018_10_05_060958) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "detail_order_id"
-    t.integer "user_id"
-    t.integer "status", default: 0
-    t.integer "total", default: 0
+    t.string "user_id"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["detail_order_id"], name: "index_orders_on_detail_order_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -54,8 +40,8 @@ ActiveRecord::Schema.define(version: 2018_10_05_060958) do
     t.text "description"
     t.string "image"
     t.integer "quantity"
-    t.string "category"
-    t.integer "price"
+    t.integer "category_id"
+    t.decimal "price"
     t.float "rate", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
