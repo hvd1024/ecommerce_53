@@ -15,6 +15,9 @@ en:
       update: "Update"
       signup: Sign Up
       sell: "Sell"
+      cart: Cart
+      his: History
+      admin: Admin
     footer:
       authors: "Authors: "
       name: "Hà Văn Đồng | Nguyễn Viết Minh Tuệ"
@@ -29,6 +32,17 @@ en:
   static_pages:
     title: "E-Commerce"
     home: "Home"
+    carousel:
+      slide_1_title: Living room
+      slide_1_content: Living Room furniture to suit your style.
+      slide_2_title: Office
+      slide_2_content: Office furniture to suit your style.
+      slide_3_title: Hallway
+      slide_3_content: Hallway furniture to suit your style.
+    home:  
+      trend: HOT TRENDS
+      update: PRODUCT UPDATES
+      recently: YOUR RECENTLY VIEWED ITEMS
   shared:
     error_messages:
       form: "The form contains"
@@ -49,6 +63,7 @@ en:
     link: "%{u}"
     index:
       title: All Products
+      title_sort: PRODUCTS
     new:
       title: "New product"
       sell: "Sell"
@@ -56,9 +71,17 @@ en:
       currency: " VND"
       rate: "Rating %{u}"
       update: "Update"
+      not_rated: You have not rated this product, please rate it with us.
+      ever_rated: You have rated the product.
+      decrip: Description
+      title: PRODUCT DETAIL
+      rating: Rating
+      addcart: ADD TO CART
+      seecart: See your shopping cart
     edit:
       title: Update product
       save: "Save changes"
+      
   users:
     welcome: "Welcome %{u} to Furniture E-Commerce"
     danger: "Invalid email/password"
@@ -76,10 +99,7 @@ en:
     new:
       signup: "Sign up"
       create: "Create account"
-  products:
-    show:
-      not_rated: You have not rated this product, please rate it with us.
-      ever_rated: You have rated the product.
+
   suggestions:
     new:
       h2: Suggestion

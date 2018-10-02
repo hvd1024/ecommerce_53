@@ -56,7 +56,7 @@
 #   rand = 2+Random.rand(7)
 #   Product.create!(name: Faker::Name.unique.name,
 #     description: Faker::Lorem.sentence(4),
-#     image: "product/#{rand}.jpg",
+#     image: "product/2.jpg",
 #     category_id: rand,
 #     quantity: rand,
 #     price: rand
@@ -114,40 +114,41 @@
 # /test rating
 
 # test sort
-Category.create!(name: "Ghe")
-Category.create!(name: "Ghe van phong",parent_id: 1)
-Category.create!(name: "Ghe game",parent_id: 1)
-Category.create!(name: "Ghe van phong 1 sao",parent_id: 2)
-Category.create!(name: "Ghe van phong 5 sao",parent_id: 2)
-Category.create!(name: "Ghe giam doc",parent_id: 5)
-Category.create!(name: "Ghe game 123",parent_id: 3)
-Category.create!(name: "Ghe game 456",parent_id: 3)
-Category.create!(name: "Ban")
+# Category.create!(name: "Ghe")
+# Category.create!(name: "Ghe van phong",parent_id: 1)
+# Category.create!(name: "Ghe game",parent_id: 1)
+# Category.create!(name: "Ghe van phong 1 sao",parent_id: 2)
+# Category.create!(name: "Ghe van phong 5 sao",parent_id: 2)
+# Category.create!(name: "Ghe giam doc",parent_id: 5)
+# Category.create!(name: "Ghe game 123",parent_id: 3)
+# Category.create!(name: "Ghe game 456",parent_id: 3)
+# Category.create!(name: "Ban")
 
-Product.create!(name: "A",
-  description: "none",
-  image: "product/2.jpg",
-  category_id: 1,
-  quantity: 1,
-  price: 1
-)
+# Product.create!(name: "A",
+#   description: "none",
+#   image: "product/2.jpg",
+#   category_id: 1,
+#   quantity: 1,
+#   price: 1
+# )
 
-Product.create!(name: "Z",
-  description: "none",
-  image: "product/4.jpg",
-  category_id: 1,
-  quantity: 1,
-  price: 1
-)
+# Product.create!(name: "Z",
+#   description: "none",
+#   image: "product/4.jpg",
+#   category_id: 1,
+#   quantity: 1,
+#   price: 1
+# )
 
-10.times do |i|
-  rand = 2+Random.rand(7)
-  Product.create!(name: Faker::Pokemon.name+"_"+i.to_s,
-    description: "none",
-    image: "product/2.jpg",
-    category_id: rand,
-    quantity: rand,
-    price: rand
-  )
-end
+# 10.times do |i|
+#   rand = 2+Random.rand(7)
+#   Product.create!(name: Faker::Pokemon.name+"_"+i.to_s,
+#     description: "none",
+#     image: "product/2.jpg",
+#     category_id: rand,
+#     quantity: rand,
+#     price: rand
+#   )
+# end
 # /test sort
+
