@@ -39,7 +39,7 @@
         <!-- /Multi dropdown menu -->
         <li>
           <% if logged_in? && current_user.admin? %>
-          <%= link_to "#admin" do %>
+          <%= link_to admin_users_path do %>
               <i class="fa fa-users" aria-hidden="true"></i> <%= t(".admin") %>
             <% end %>
           <% end %>
