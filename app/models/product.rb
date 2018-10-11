@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
   VALID_MONEY_REGEX = /d*(\.d{1,2})?/
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_many :users, through: :ratings
-  has_many :order_details
+  has_many :detail_orders, dependent: :destroy
   belongs_to :category
   mount_uploader :picture, PictureUploader
 
@@ -16,9 +16,9 @@ class Product < ApplicationRecord
   validates :rate, presence: true
 
   scope :hot_trend, -> do
-    joins(:order_details)
-    .group("order_details.product_id")
-    .order("count(order_details.product_id) DESC")
+    joins(:detail_orders)
+    .group("detail_orders.product_id")
+    .order("count(detail_orders.product_id) DESC")
     .limit(12)
   end
   scope :sort_alphabet_az, ->{order "name"}
@@ -39,4 +39,5 @@ class Product < ApplicationRecord
   end
   scope :sort_product_updated, ->{order("created_at desc").limit(12)}
   scope :recently_products, -> list {where "id in (?)", list}
+  scope :select_col, ->{attribute_names}
 end

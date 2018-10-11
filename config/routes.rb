@@ -18,13 +18,16 @@ Rails.application.routes.draw do
   post "/suggestions", to: "suggestions#create"
   get "/recently", to: "recent_views#recently"
 
-  resources :categories
+  # resources :categories
   resources :products
   resources :orders
   resources :detail_orders, only: [:create, :update, :destroy]
   resources :users
 
   namespace :admin do
+    get "/home", to: "users#home"
     resources :users
+    resources :products
+    resources :categories
   end
 end

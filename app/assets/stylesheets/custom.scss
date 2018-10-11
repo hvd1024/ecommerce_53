@@ -56,3 +56,54 @@
 .height-default-js{
   background-color: white;
 }
+
+.mytable th{
+  text-align: center;
+}
+
+.product-edit{
+  color: red;
+  text-decoration: underline;
+}
+
+.cart-count {
+    color: #4a4a4a;
+    background: #fdd835;
+    height: 20px;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 0 6px;
+    font-weight: 700;
+}
+
+.bt-edit{
+  margin-bottom: 20px !important;
+}
+
+.show-quantity{
+  margin: 10px 0 0 0;
+}
+
+.buy-now{
+  margin: 10px;
+}
+
+.cart-nothing{
+  padding: 20px;
+}
+
+.gravatar_edit{
+  padding: 10px 0;
+}
+
+.myfl{
+  width: 80vh;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  right: 20px;
+  box-shadow: 5px 10px 180px #2f2f2f;
+}

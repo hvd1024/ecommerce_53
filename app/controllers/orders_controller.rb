@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
 
   def update
     @history = Order.find(params[:id])
-    @history.update_attributes(order_params)
+    flash[:success] = "Changed" if @history.update_attributes(order_params)
     redirect_to history_path
   end
 

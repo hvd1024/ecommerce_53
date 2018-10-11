@@ -15,7 +15,7 @@ class DetailOrdersController < ApplicationController
     end
     @order.save
     session[:order_id] = @order.id
-    redirect_to products_path
+    redirect_to cart_path
   end
 
   def update

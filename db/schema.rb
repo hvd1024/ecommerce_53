@@ -75,8 +75,9 @@ ActiveRecord::Schema.define(version: 2018_10_05_060958) do
     t.string "name"
     t.string "description"
     t.integer "cartegory_id"
-    t.string "image"
+    t.string "picture"
     t.string "status"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -39,47 +39,37 @@
         <!-- /Multi dropdown menu -->
         <li>
           <% if logged_in? && current_user.admin? %>
-          <%= link_to admin_users_path do %>
-              <i class="fa fa-users" aria-hidden="true"></i> <%= t(".admin") %>
+          <%= link_to admin_home_path do %>
+              <i class="fa fa-user-secret" aria-hidden="true"></i> <%= t(".admin") %>
             <% end %>
           <% end %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li>
-          <%#= link_to "Cart", cart_path %>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            Cart
-            <%= render "layouts/cart_text" %>
-          </a>
-        </li> -->
         <% if logged_in? %>
           <li>
-            <%= link_to "#url" do %>
-              <span class="glyphicon glyphicon-shopping-cart"></span> <%= t(".cart") %>
+            <%= link_to cart_path do %>
+              <span class="glyphicon glyphicon-shopping-cart"></span> 
+              <%= t(".cart") %>
+              <span class="cart-count">
+                <%= current_order.detail_orders.size %>
+              </span>
             <% end %>
           </li>
           <li>
-            <%= link_to "#url" do %>
-              <span class="fa fa-history"></span> <%= t(".his") %>
+            <%= link_to history_path do %>
+              <span class="fa fa-history"></span> <%= t(".history") %>
             <% end %>
           </li>
-          <li><%= link_to t(".product"), products_path %></li>
-          <li><%= link_to t(".history"), history_path %></li>
-          <% if current_user.admin? %>
-            <li><%= link_to t(".user"), users_path %></li>
-            <li><%= link_to t(".sell"), upload_path %></li>
-          <% end %>
+          <!-- <li><%#= link_to t(".sell"), upload_path %></li> -->
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="fa fa-user" aria-hidden="true"></i>
               <%= current_user.name %> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t(".profile"), "#" %></li>
               <li><%= link_to t(".update"), edit_user_path(current_user) %></li>
               <li class="divider"></li>
-              <li><a href="<% logout_path %>"></a></li>
               <li>
                 <%= link_to logout_path, method: :delete do %>
                   <span class="glyphicon glyphicon-log-out"></span>

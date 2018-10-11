@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       log_in @user
       remember @user
       flash[:success] = t ".welcome", u: @user.name
-      redirect_to @user
+      redirect_to root_path
     else
       flash[:danger] = t ".danger"
       render :new
@@ -32,16 +32,24 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t ".updated"
-      redirect_to @user
+      if current_user.customer?
+        redirect_to @user
+      else
+        redirect_to admin_users_path
+      end
     else
-      render :edit
+      if current_user.customer?
+        render :edit
+      else
+        render "admin/users/edit"
+      end
     end
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = t".delete"
-    redirect_to users_path
+    redirect_to admin_users_path
   end
 
   private

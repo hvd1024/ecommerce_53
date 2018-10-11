@@ -12,20 +12,24 @@
 
   <div class="row product-detail fix">
     <div class="col-sm-7 pd-left fix">
-      <!-- <img src="<%= @product.image %>" alt=""> -->
       <%= image_for @product %>
     </div>
     <div class="col-sm-5 pd-right">
-      <h4><i class="fa fa-check" aria-hidden="true" Style="color:green"></i> <%= @product.name %></h4>
+      <h4><i class="fa fa-check" aria-hidden="true" Style="color:green"></i> 
+        <%= @product.name %>
+        <% if logged_in? && current_user.admin? %>
+        <%= link_to "[Edit product]", edit_product_path, class: "product-edit" %>
+        <% end %>
+      </h4>
       <div class="start" id="product_rating">
         <%= render partial: "product_rating", locals: {product_on: @product_on} %>
       </div>
       <div class="gia"><i class="fa fa-money" aria-hidden="true"></i> 
-        <%= number_to_currency(@product.price, unit: "VND", format: "%n %u") %>
+        <%= number_to_currency(@product.price, unit: "VND", format: "%n %u", precision: 0) %>
       </div>
       <span class="pd_click">
-        <a href="#" class="buy-now"><%= t ".addcart" %></a>
-        <a href="#" class="your-cart"><%= t ".seecart" %></a>
+        <%= render "product_row", product: @product%>
+        <%= link_to t(".seecart"), cart_path, class: "your-cart" %>
       </span>
     </div>
   </div>

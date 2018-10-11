@@ -10,7 +10,7 @@ en:
       info: "Product is not found"
   carts:
     success: "Successful order "
-    shopping_cart:
+    show:
       nothing: "Nothing to show"
       back: "Back to shopping"
     cart_row:
@@ -28,7 +28,7 @@ en:
       history: "Shopping history"
       users: Users
       login: Login
-      update: "Update"
+      update: Update your profile
       signup: Sign Up
       sell: "Sell"
       cart: Cart
@@ -91,7 +91,7 @@ en:
     danger: "Product can not save"
     link: "%{u}"
     product_row:
-      add: "Add to cart"
+      add: ADD TO CART
     index:
       title: All Products
       title_sort: PRODUCTS
@@ -133,3 +133,4 @@ en:
   suggestions:
     new:
       h2: Suggestion
+      pls_login: Please login !!!
